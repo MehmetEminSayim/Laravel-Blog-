@@ -14,6 +14,10 @@
                 </div>
             </div>
 
+            @if(session('status'))
+                <div class="alert alert-success">{{session('status')}}</div>
+            @endif
+
             <table class="table datatable-basic">
                 <thead>
                 <tr>
@@ -39,11 +43,9 @@
                                 <a href="#" class="list-icons-item" data-toggle="dropdown">
                                     <i class="icon-menu9"></i>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Export to .pdf</a>
-                                    <a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Export to .csv</a>
-                                    <a href="#" class="dropdown-item"><i class="icon-file-word"></i> Export to .doc</a>
+                                    <a href="{{route('kategoriduzenle',['id'=>$item->id])}}" class="dropdown-item"><i class="icon-pen-plus"></i> Düzenle</a>
+                                    <a href="{{route('kategorisil',['id'=>$item->id])}}" class="dropdown-item"><i class="icon-trash"></i> Sil</a>
                                 </div>
                             </div>
                         </div>

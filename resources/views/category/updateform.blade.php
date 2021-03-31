@@ -1,5 +1,5 @@
 @extends('master.master')
-@section('title', 'Kategori')
+@section('title', 'Kategori Güncelle')
 
 @section('content')
     <div class="container">
@@ -22,7 +22,7 @@
                 @if(session('status'))
                     <div class="alert alert-success">{{session('status')}}</div>
                 @endif
-                <form id="userform"  action="{{route('kategori_ekle')}}" method="post" enctype="multipart/form-data">
+                <form id="userform"  action="{{route('kategoriguncelle',['id',$data->id])}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -33,7 +33,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kategori:</label>
-                                            <input  required name="name" type="text" placeholder="Category name" class="form-control">
+                                            <input  required value="{{$data->name}}" name="name" type="text" placeholder="Category name" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="text-right">
-                        <button id="kaydetBtn" type="submit" class="btn btn-primary">Kaydet<i class="icon-paperplane ml-2"></i></button>
+                        <button id="kaydetBtn" type="submit" class="btn btn-primary">Güncelle<i class="icon-paperplane ml-2"></i></button>
                     </div>
                 </form>
             </div>

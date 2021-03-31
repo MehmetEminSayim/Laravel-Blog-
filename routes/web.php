@@ -19,6 +19,9 @@ Route::get('/','Dashboard@index')->name('anasayfa');
 Route::get('/kategori','Category@index')->name('kategori');
 Route::get('/kategori_form','Category@addform')->name('kategori_form');
 Route::post('/kategori_ekle','Category@savedata')->name('kategori_ekle');
+Route::get('/kategorisil/{id}','Category@delete')->name('kategorisil');
+Route::get('/kategoriduzenle/{id}','Category@updateform')->name('kategoriduzenle');
+Route::post('/kategoriguncelle/{id}','Category@update')->name('kategoriguncelle');
 
 Route::get('/blog','Blog@index')->name('blog');
 

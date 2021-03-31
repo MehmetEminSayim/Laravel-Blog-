@@ -170,7 +170,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{route('kategori')}}" class="nav-link"><i class="icon-list"></i> <span>Kategori Ekle</span></a>
+                        <a href="{{route('kategori')}}" class="nav-link"><i class="icon-list"></i> <span>Kategoriler</span></a>
                     </li>
 
                     <li class="nav-item ">
