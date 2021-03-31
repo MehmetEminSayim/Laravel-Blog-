@@ -9,7 +9,7 @@
                 <h5 class="card-title">Kategori Ekle</h5>
                 <div class="header-elements">
                     <div class="list-icons">
-                        <button type="button" class="btn btn-outline bg-primary border-primary text-primary-800 btn-icon"><i class="icon-arrow-left13"></i></button>
+                        <button type="button" class="btn btn-outline bg-primary border-primary text-primary-800 btn-icon"><i class="icon-backward2"></i></button>
                     </div>
                 </div>
             </div>
