@@ -6,7 +6,7 @@
         <!-- Basic datatable -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <a href="{{ redirect()->back()->getTargetUrl() }}"><button type="button" class="btn btn-outline bg-danger border-danger text-danger-800 btn-icon"><i class="icon-backward2"></i>Geri</button></a>
+                <a href="{{ route('kategori') }}"><button type="button" class="btn btn-outline bg-danger border-danger text-danger-800 btn-icon"><i class="icon-backward2"></i>Geri</button></a>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
@@ -22,7 +22,8 @@
                 @if(session('status'))
                     <div class="alert alert-success">{{session('status')}}</div>
                 @endif
-                <form id="userform"  action="{{route('kategoriguncelle',['id',$data->id])}}" method="post" enctype="multipart/form-data">
+
+                <form action="{{route('kategoriguncelle',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -33,7 +34,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kategori:</label>
-                                            <input  required value="{{$data->name}}" name="name" type="text" placeholder="Category name" class="form-control">
+                                            <input  value="{{$data->name}}" name="name" type="text" class="form-control">
                                         </div>
                                     </div>
                                 </div>

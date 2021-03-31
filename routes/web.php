@@ -24,6 +24,11 @@ Route::get('/kategoriduzenle/{id}','Category@updateform')->name('kategoriduzenle
 Route::post('/kategoriguncelle/{id}','Category@update')->name('kategoriguncelle');
 
 Route::get('/blog','Blog@index')->name('blog');
+Route::get('/blog_form','Blog@addform')->name('blogform');
+Route::post('/blogekle','Blog@savedata')->name('blogekle');
+Route::get('/blogsil/{id}','Blog@delete')->name('blogsil');
+Route::get('/blogduzenle/{id}','Blog@updateform')->name('blogduzenle');
+Route::post('/blogguncelle/{id}','Blog@update')->name('blogguncelle');
 
 Auth::routes();
 

@@ -6,7 +6,7 @@
         <!-- Basic datatable -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <a href="{{ redirect()->back()->getTargetUrl() }}"><button type="button" class="btn btn-outline bg-danger border-danger text-danger-800 btn-icon"><i class="icon-backward2"></i>Geri</button></a>
+                <a href="{{ route('kategori') }}"><button type="button" class="btn btn-outline bg-danger border-danger text-danger-800 btn-icon"><i class="icon-backward2"></i>Geri</button></a>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
@@ -15,8 +15,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <div class="card-body">
                 @if(session('status'))

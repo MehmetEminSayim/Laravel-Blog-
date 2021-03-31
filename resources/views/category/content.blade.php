@@ -35,7 +35,7 @@
                     <td>{{ $item->id }}</td>
                     <td><a href="#">{{ $item->name }}</a></td>
                     <td>{{ $item->slug }}</td>
-                    <td>{{ $item->created_at }}</td>
+                    <td> {{ $item->created_at ->formatLocalized(' %d %B %Y') }} </td>
                     <td><span class="badge badge-success">Active</span></td>
                     <td class="text-center">
                         <div class="list-icons">

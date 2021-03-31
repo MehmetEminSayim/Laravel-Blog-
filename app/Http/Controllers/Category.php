@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\CategoryModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class Category extends Controller
 {
     public function __construct () {
         $this->middleware('auth');
+        Carbon::now('Europe/Istanbul');
+        Carbon::setLocale('tr');
     }
 
     public function index(){
@@ -40,21 +43,19 @@ class Category extends Controller
     }
 
     public function updateform($id){
-        $m = CategoryModel::where('id',$id)->get();
-        $data =$m->first();
+        $data = CategoryModel::where('id',$id)->get()->first();
         return view('category/updateform',compact('data'));
     }
 
 
     public function update(Request $request , $id){
 
-        $cat = new CategoryModel();
-        $cat->name = $request->name;
-        $cat->slug = Str::slug($request->name);
-
-        $update =  $cat->update('id',$id);
+        $update = CategoryModel::where('id',$id)->update([
+               'name' =>$request->name,
+               'slug' =>Str::slug($request->name)
+               ]);
         if ($update){
-            return back()->with('status','Kategori başarılı bir şekilde kaydedildi');
+            return back()->with('status','Kategori başarılı bir şekilde güncellendi');
         }
     }
 
