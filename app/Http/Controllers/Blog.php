@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use function PHPUnit\Framework\fileExists;
 
 
 class Blog extends Controller
@@ -62,10 +63,15 @@ class Blog extends Controller
     public function delete ($id){
         $post = BlogModel::where('id', $id)->first();
         $file= $post->img_url;
-            $filename = public_path()."/storage/uploads/".$file;
-            unlink($filename);
-        $post->delete();
 
+        $filename = public_path()."/storage/uploads/".$file;
+        if(file_exists($filename)){
+            unlink($filename);
+            $post->delete();
+        }
+        else {
+            $post->delete();
+        }
         return back()->with('status','Silme işlemi başarılı');
 
     }
