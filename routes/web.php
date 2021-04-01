@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\Dashboard::class, 'index'])->name('home');
+
 
 Route::get('/','Dashboard@index')->name('anasayfa');
 
@@ -30,6 +33,11 @@ Route::get('/blogsil/{id}','Blog@delete')->name('blogsil');
 Route::get('/blogduzenle/{id}','Blog@updateform')->name('blogduzenle');
 Route::post('/blogguncelle/{id}','Blog@update')->name('blogguncelle');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\Dashboard::class, 'index'])->name('home');
+Route::get('/mailform','MailController@index')->name('mailform');
+Route::post('/sendmail','MailController@sendmail')->name('sendmail');
+
+Route::get('/settings','Settings@index')->name('settings');
+Route::any('/updatesettings','Settings@updatesettings')->name('updatesettings');
+
+

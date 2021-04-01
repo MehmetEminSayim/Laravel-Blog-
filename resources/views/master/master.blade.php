@@ -176,6 +176,14 @@
                     <li class="nav-item ">
                         <a href="{{route('blog')}}" class="nav-link"><i class="icon-book-play"></i> <span>Blog</span></a>
                     </li>
+
+                    <li class="nav-item ">
+                        <a href="{{route('mailform')}}" class="nav-link"><i class="icon-mail5"></i> <span>Bildirim Gönder</span></a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="{{route('settings')}}" class="nav-link"><i class="icon-cog52"></i> <span>Ayarlar</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /main navigation -->
